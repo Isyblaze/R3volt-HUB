@@ -13,7 +13,8 @@ export default function Home() {
       </main>
     </div>
   );
-}import Header from "../components/Header";// pages/index.js
+}
+import Header from "../components/Header";// pages/index.js
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
