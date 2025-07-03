@@ -7,41 +7,46 @@ import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  // React & JS files only
   {
     files: ["**/*.{js,mjs,cjs,jsx}"],
-    plugins: { react: pluginReact },
-    extends: ["plugin:react/recommended", "eslint:recommended"],
+    plugins: { js, react: pluginReact },
+    extends: ["plugin:react/recommended"],
     languageOptions: {
       globals: { ...globals.browser, ...globals.node },
       parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
         ecmaFeatures: { jsx: true },
       },
     },
-    settings: { react: { version: "detect" } },
+    rules: {
+      // your custom rules
+    },
+    settings: {
+      react: {
+        version: "detect",  // <-- this fixes the react version warning
+      },
+    },
   },
-
-  // JSON files (no react plugin here)
   {
     files: ["**/*.json", "**/*.jsonc", "**/*.json5"],
     plugins: { json },
     language: "json/json",
     extends: ["plugin:json/recommended"],
   },
-
-  // Markdown files
   {
     files: ["**/*.md"],
     plugins: { markdown },
     language: "markdown/gfm",
     extends: ["plugin:markdown/recommended"],
   },
-
-  // CSS files
   {
     files: ["**/*.css"],
     plugins: { css },
     language: "css/css",
     extends: ["plugin:css/recommended"],
+    rules: {
+      // CSS rules here, no react plugin applied
+    },
   },
 ]);
