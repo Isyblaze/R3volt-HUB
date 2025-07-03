@@ -9,13 +9,13 @@ export default function Home() {
       <Header />
       <main className={styles.container}>
         <section className={styles.hero}>
-          <h1>Welcome to Revolt Hub</h1>
-          <p>Your multipurpose fintech space hub for games, social media, and more.</p>
+          <h1>Enter to Revolt Hub</h1>
+          <p>Your multipurpose space hub for games, social media, and more.</p>
           <button
             className={styles.ctaButton}
             onClick={() => alert("Get Started clicked!")}
           >
-            Get Started
+            Dive In
           </button>
         </section>
 
