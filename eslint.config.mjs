@@ -11,14 +11,13 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,jsx}"],
     plugins: { js, react: pluginReact },
     extends: ["js/recommended", "plugin:react/recommended"],
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+    },
     settings: {
       react: {
-        version: "detect",  // Auto-detect React version
+        version: "detect", // Detect React version automatically
       },
-    },
-    languageOptions: { globals: { ...globals.browser, ...globals.node } },
-    rules: {
-      "react/react-in-jsx-scope": "off",  // No need to import React in scope for JSX
     },
   },
   {
