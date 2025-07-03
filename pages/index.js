@@ -1,23 +1,35 @@
+// pages/index.js
+import styles from '../styles/Home.module.css';
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white px-4">
-      <h1 className="text-4xl md:text-6xl font-extrabold text-purple-500 mb-4 text-center">
-        Welcome to Revolt Hub ⚡
-      </h1>
-      <p className="text-lg md:text-xl text-gray-300 mb-8 text-center max-w-xl">
-        Your multipurpose digital hub for everything Fintech, Social, and Games — all in one place.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-lg">
-        <a href="/fintech" className="bg-purple-600 hover:bg-purple-700 rounded-xl py-4 text-center text-white shadow-md transition">
-          💸 Fintech
-        </a>
-        <a href="/social" className="bg-blue-600 hover:bg-blue-700 rounded-xl py-4 text-center text-white shadow-md transition">
-          💬 Social
-        </a>
-        <a href="/games" className="bg-green-600 hover:bg-green-700 rounded-xl py-4 text-center text-white shadow-md transition">
-          🎮 Games
-        </a>
-      </div>
+    <main className={styles.container}>
+      <section className={styles.hero}>
+        <h1>Welcome to Revolt Hub</h1>
+        <p>Your multipurpose fintech space hub for games, social media, and more.</p>
+        <button className={styles.ctaButton} onClick={() => alert('Get Started clicked!')}>
+          Get Started
+        </button>
+      </section>
+
+      <section className={styles.features}>
+        <div className={styles.featureCard}>
+          <h3>Fintech Made Simple</h3>
+          <p>Access all your financial tools in one seamless platform.</p>
+        </div>
+        <div className={styles.featureCard}>
+          <h3>Social & Gaming</h3>
+          <p>Connect with your community and enjoy your favorite games.</p>
+        </div>
+        <div className={styles.featureCard}>
+          <h3>Secure & Reliable</h3>
+          <p>We prioritize your data privacy and platform security.</p>
+        </div>
+      </section>
+
+      <footer className={styles.footer}>
+        &copy; {new Date().getFullYear()} Revolt Hub. All rights reserved.
+      </footer>
     </main>
   );
-}
+    }
