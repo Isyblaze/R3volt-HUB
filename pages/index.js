@@ -1,4 +1,19 @@
-import Header from "../components/Header";// pages/index.js
+import React from "react";
+import Header from "../components/Header";
+
+export default function Home() {
+  return (
+    <div>
+      <Header />
+      <main className="p-4">
+        <h2 className="text-2xl font-semibold">Welcome to R3volt Hub</h2>
+        <p className="mt-2 text-gray-700">
+          This is the landing page for your multipurpose fintech platform.
+        </p>
+      </main>
+    </div>
+  );
+}import Header from "../components/Header";// pages/index.js
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
