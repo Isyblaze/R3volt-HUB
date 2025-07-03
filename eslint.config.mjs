@@ -9,46 +9,46 @@ import { defineConfig } from "eslint/config";
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,jsx}"],
-    plugins: { js },
-    extends: ["eslint:recommended", "plugin:js/recommended", "next/core-web-vitals"],
-    languageOptions: {
-      globals: { ...globals.browser, ...globals.node },
-      parserOptions: {
-        ecmaVersion: 2020,
-        sourceType: "module",
-        ecmaFeatures: { jsx: true },
+    plugins: { js, react: pluginReact },
+    extends: ["js/recommended", "plugin:react/recommended"],
+    settings: {
+      react: {
+        version: "detect",  // Auto-detect React version
       },
     },
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+    rules: {
+      "react/react-in-jsx-scope": "off",  // No need to import React in scope for JSX
+    },
   },
-  pluginReact.configs.flat.recommended,
   {
     files: ["**/*.json"],
     plugins: { json },
     language: "json/json",
-    extends: ["plugin:json/recommended"],
+    extends: ["json/recommended"],
   },
   {
     files: ["**/*.jsonc"],
     plugins: { json },
     language: "json/jsonc",
-    extends: ["plugin:json/recommended"],
+    extends: ["json/recommended"],
   },
   {
     files: ["**/*.json5"],
     plugins: { json },
     language: "json/json5",
-    extends: ["plugin:json/recommended"],
+    extends: ["json/recommended"],
   },
   {
     files: ["**/*.md"],
     plugins: { markdown },
     language: "markdown/gfm",
-    extends: ["plugin:markdown/recommended"],
+    extends: ["markdown/recommended"],
   },
   {
     files: ["**/*.css"],
     plugins: { css },
     language: "css/css",
-    extends: ["plugin:css/recommended"],
+    extends: ["css/recommended"],
   },
 ]);
