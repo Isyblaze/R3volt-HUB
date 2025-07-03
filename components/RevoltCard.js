@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 export default function RevoltCard({ title, description, href, className = "" }) {
   return (
     <a
