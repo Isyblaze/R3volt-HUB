@@ -9,45 +9,53 @@ import { defineConfig } from "eslint/config";
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,jsx}"],
-    plugins: { js, react: pluginReact },
-    extends: ["js/recommended", "plugin:react/recommended"],
+    plugins: { react: pluginReact },
+    extends: ["plugin:react/recommended", "eslint:recommended"],
     languageOptions: {
       globals: { ...globals.browser, ...globals.node },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
     },
     settings: {
       react: {
-        version: "detect", // Detect React version automatically
+        version: "detect", // Automatically detect React version
       },
+    },
+    rules: {
+      // add your custom rules here if any
     },
   },
   {
     files: ["**/*.json"],
     plugins: { json },
     language: "json/json",
-    extends: ["json/recommended"],
+    extends: ["plugin:json/recommended"],
   },
   {
     files: ["**/*.jsonc"],
     plugins: { json },
     language: "json/jsonc",
-    extends: ["json/recommended"],
+    extends: ["plugin:json/recommended"],
   },
   {
     files: ["**/*.json5"],
     plugins: { json },
     language: "json/json5",
-    extends: ["json/recommended"],
+    extends: ["plugin:json/recommended"],
   },
   {
     files: ["**/*.md"],
     plugins: { markdown },
     language: "markdown/gfm",
-    extends: ["markdown/recommended"],
+    extends: ["plugin:markdown/recommended"],
   },
   {
     files: ["**/*.css"],
     plugins: { css },
     language: "css/css",
-    extends: ["css/recommended"],
+    extends: ["plugin:css/recommended"],
   },
 ]);
