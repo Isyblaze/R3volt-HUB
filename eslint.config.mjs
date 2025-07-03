@@ -7,6 +7,7 @@ import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
+  // React & JS files only
   {
     files: ["**/*.{js,mjs,cjs,jsx}"],
     plugins: { react: pluginReact },
@@ -14,44 +15,29 @@ export default defineConfig([
     languageOptions: {
       globals: { ...globals.browser, ...globals.node },
       parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
+        ecmaFeatures: { jsx: true },
       },
     },
-    settings: {
-      react: {
-        version: "detect", // Automatically detect React version
-      },
-    },
-    rules: {
-      // add your custom rules here if any
-    },
+    settings: { react: { version: "detect" } },
   },
+
+  // JSON files (no react plugin here)
   {
-    files: ["**/*.json"],
+    files: ["**/*.json", "**/*.jsonc", "**/*.json5"],
     plugins: { json },
     language: "json/json",
     extends: ["plugin:json/recommended"],
   },
-  {
-    files: ["**/*.jsonc"],
-    plugins: { json },
-    language: "json/jsonc",
-    extends: ["plugin:json/recommended"],
-  },
-  {
-    files: ["**/*.json5"],
-    plugins: { json },
-    language: "json/json5",
-    extends: ["plugin:json/recommended"],
-  },
+
+  // Markdown files
   {
     files: ["**/*.md"],
     plugins: { markdown },
     language: "markdown/gfm",
     extends: ["plugin:markdown/recommended"],
   },
+
+  // CSS files
   {
     files: ["**/*.css"],
     plugins: { css },
