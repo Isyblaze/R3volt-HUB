@@ -8,15 +8,27 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "13.4.19",
+    "next": "^13.5.11",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^4.1.11"
   },
   "eslintConfig": {
-    "extends": ["next", "next/core-web-vitals"]
+    "extends": [
+      "next",
+      "next/core-web-vitals"
+    ]
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
-    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
