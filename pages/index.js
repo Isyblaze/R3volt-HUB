@@ -1,25 +1,24 @@
 import React from "react";
 import Header from "../components/Header";
-import RevoltCard from "../components/RevoltCard";
-import styles from "../styles/Home.module.css";
+import { Button } from "../components/ui/Button";
+import { RevoltCard } from "../components/RevoltCard";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Header />
-      <main className={styles.container}>
-        <section className={styles.hero}>
-          <h1>Enter to Revolt Hub</h1>
-          <p>Your multipurpose space hub for games, social media, and more.</p>
-          <button
-            className={styles.ctaButton}
-            onClick={() => alert("Get Started clicked!")}
-          >
-            Dive In
-          </button>
+      <main className="p-6 space-y-6">
+        <section>
+          <h1 className="text-3xl font-bold">Enter the Revolt Hub</h1>
+          <p className="text-gray-600 mt-2">
+            Your multipurpose space hub for games, social media, and more.
+          </p>
+          <Button variant="revolt" className="mt-4" onClick={() => alert("Let’s Go!")}>
+            Take a seat
+          </Button>
         </section>
 
-        <section className={styles.features}>
+        <section className="grid md:grid-cols-3 gap-6 mt-10">
           <RevoltCard
             title="Fintech Made Simple"
             description="Access all your financial tools in one seamless platform."
@@ -36,11 +35,11 @@ export default function Home() {
             href="#"
           />
         </section>
-
-        <footer className={styles.footer}>
-          &copy; {new Date().getFullYear()} Revolt Hub. All rights reserved.
-        </footer>
       </main>
-    </>
+
+      <footer className="text-center text-gray-400 text-sm mt-10">
+        &copy; {new Date().getFullYear()} Revolt Hub. All rights reserved.
+      </footer>
+    </div>
   );
               }
