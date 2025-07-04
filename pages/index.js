@@ -9,21 +9,12 @@ export default function Home() {
       <Header />
       <main className="p-6 space-y-6">
         <section>
-<<<<<<< HEAD
-          <h1 className="text-3xl font-bold">Enter the Revolt Hub</h1>
-          <p className="text-gray-600 mt-2">
-            Your multipurpose space hub for games, social media, and more.
-          </p>
-          <Button variant="revolt" className="mt-4" onClick={() => alert("Let’s Go!")}>
-            Take a seat
-=======
           <h1 className="text-3xl font-bold">Welcome to Revolt Hub</h1>
           <p className="text-gray-600 mt-2">
             Your multipurpose fintech space hub for games, social media, and more.
           </p>
           <Button variant="revolt" className="mt-4" onClick={() => alert("Let’s Go!")}>
             Get Started
->>>>>>> fb1d4045 (Add RevoltCard and updated index page with component usage)
           </Button>
         </section>
 
@@ -51,8 +42,4 @@ export default function Home() {
       </footer>
     </div>
   );
-<<<<<<< HEAD
-              }
-=======
-}
->>>>>>> fb1d4045 (Add RevoltCard and updated index page with component usage)
+    }
