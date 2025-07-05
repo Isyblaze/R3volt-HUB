@@ -1,5 +1,3 @@
-// pages/index.js
-
 import React from "react";
 import Header from "../components/Header";
 import { Button } from "../components/ui/Button";
@@ -7,24 +5,22 @@ import { RevoltCard } from "../components/RevoltCard";
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white px-6">
       <Header />
-      <main className="p-6 space-y-6">
-        <section>
-          <h1 className="text-3xl font-bold">Welcome to Revolt Hub</h1>
-          <p className="text-gray-600 mt-2">
-            Your multipurpose fintech space hub for games, social media, and more.
+      <main className="max-w-5xl mx-auto py-16 space-y-12">
+        <section className="text-center space-y-4">
+          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+            Welcome to R3volt Hub
+          </h1>
+          <p className="text-gray-300 max-w-xl mx-auto">
+            Your futuristic fintech hub for games, social, and secure digital services.
           </p>
-          <Button
-            variant="revolt"
-            className="mt-4"
-            onClick={() => alert("Let’s Go!")}
-          >
+          <Button variant="revolt" size="lg" onClick={() => alert("Let’s Go!")}>
             Get Started
           </Button>
         </section>
 
-        <section className="grid md:grid-cols-3 gap-6 mt-10">
+        <section className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           <RevoltCard
             title="Fintech Made Simple"
             description="Access all your financial tools in one seamless platform."
@@ -43,7 +39,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="text-center text-gray-400 text-sm mt-10">
+      <footer className="text-center text-sm text-gray-400 py-8">
         &copy; {new Date().getFullYear()} Revolt Hub. All rights reserved.
       </footer>
     </div>
