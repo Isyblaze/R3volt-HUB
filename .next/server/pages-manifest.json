@@ -1,0 +1,9 @@
+{
+  "/_error": "pages/_error.js",
+  "/_app": "pages/_app.js",
+  "/": "pages/index.js",
+  "/pages/fintech": "pages/pages/fintech.js",
+  "/pages/games": "pages/pages/games.js",
+  "/pages/social": "pages/pages/social.js",
+  "/_document": "pages/_document.js"
+}
