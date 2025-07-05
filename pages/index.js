@@ -1,3 +1,5 @@
+// pages/index.js
+
 import React from "react";
 import Header from "../components/Header";
 import { Button } from "../components/ui/Button";
@@ -13,7 +15,11 @@ export default function Home() {
           <p className="text-gray-600 mt-2">
             Your multipurpose fintech space hub for games, social media, and more.
           </p>
-          <Button variant="revolt" className="mt-4" onClick={() => alert("Let’s Go!")}>
+          <Button
+            variant="revolt"
+            className="mt-4"
+            onClick={() => alert("Let’s Go!")}
+          >
             Get Started
           </Button>
         </section>
@@ -42,4 +48,4 @@ export default function Home() {
       </footer>
     </div>
   );
-    }
+}
